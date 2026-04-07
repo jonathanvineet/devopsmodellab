@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Welcome, <span th:text="${username}"></span>!</h1>
+    <h1>Enter Product Details</h1>
+    <form method="POST">
+        <input type="text" name="product" placeholder="Username">
+        <input type="number" name="count" placeholder="Count">
+        <button type="submit">Order</button>
+    </form>
+    <a href="/">Logout</a>
+</body>
+</html>
