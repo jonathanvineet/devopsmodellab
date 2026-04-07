@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class OrderController {
     
-    @GetMapping("/")
-    public String home() {
-        return "index";
-    }
-    
     @GetMapping("/dashboard")
     public String dashboard() {
         return "dashboard";
