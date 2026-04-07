@@ -4,7 +4,7 @@
     <h1>Welcome, <span th:text="${username}"></span>!</h1>
     <h1>Enter Product Details</h1>
     <p th:if="${error}" th:text="${error}"></p>
-    <form method="POST">
+    <form method="POST" action="/dashboard">
         <input type="text" name="item" placeholder="Item name">
         <input type="number" name="count" placeholder="Count">
         <button type="submit">Order</button>
