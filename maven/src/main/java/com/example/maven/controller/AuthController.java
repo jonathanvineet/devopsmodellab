@@ -23,10 +23,11 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
         User user = new User(username, password);
-        if ("user".equals(user.getUsername()) && "pass".equals(user.getPassword())) {
+        if (!user.getUsername().isBlank() && !user.getPassword().isBlank()) {
             model.addAttribute("username", user.getUsername());
             return "dashboard";
         }
+        model.addAttribute("error", "Please enter both username and password.");
         return "login";
     }
     
