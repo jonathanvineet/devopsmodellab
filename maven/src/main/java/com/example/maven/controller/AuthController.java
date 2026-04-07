@@ -21,7 +21,10 @@ public class AuthController {
     }
     
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+    public String login(
+            @RequestParam(required = false, defaultValue = "") String username,
+            @RequestParam(required = false, defaultValue = "") String password,
+            Model model) {
         User user = new User(username, password);
         if (!user.getUsername().isBlank() && !user.getPassword().isBlank()) {
             model.addAttribute("username", user.getUsername());
@@ -37,8 +40,15 @@ public class AuthController {
     }
     
     @PostMapping("/register")
-    public String register(@RequestParam String username, @RequestParam String password, Model model) {
+    public String register(
+            @RequestParam(required = false, defaultValue = "") String username,
+            @RequestParam(required = false, defaultValue = "") String password,
+            Model model) {
         User user = new User(username, password);
+        if (user.getUsername().isBlank() || user.getPassword().isBlank()) {
+            model.addAttribute("error", "Please enter both username and password.");
+            return "register";
+        }
         model.addAttribute("username", user.getUsername());
         return "success";
     }

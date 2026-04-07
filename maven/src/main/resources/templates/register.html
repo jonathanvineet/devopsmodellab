@@ -2,7 +2,8 @@
 <html>
 <body>
     <h1>Register</h1>
-    <form method="POST">
+    <p th:if="${error}" th:text="${error}"></p>
+    <form method="POST" action="/register">
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
         <button type="submit">Register</button>
