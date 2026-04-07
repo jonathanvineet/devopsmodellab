@@ -22,7 +22,7 @@ public class OrderController {
     
     @PostMapping("/dashboard")
     public String order(@RequestParam String item, @RequestParam Integer count, Model model) {
-        OrderController order = new OrderController(item, count);
+        Order order = new Order(item, count);
         if (count != 0) {
             model.addAttribute("item", order.getItemname());
             model.addAttribute("count", order.getCount());

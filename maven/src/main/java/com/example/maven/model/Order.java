@@ -6,7 +6,7 @@ public class Order {
 
     public Order() {}
 
-    public Order(String item, String count) {
+    public Order(String item, Integer count) {
         this.item = item;
         this.count = count;
     }
@@ -19,11 +19,11 @@ public class Order {
         this.item = item;
     }
 
-    public String getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 }
